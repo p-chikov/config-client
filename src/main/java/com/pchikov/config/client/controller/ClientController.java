@@ -13,8 +13,14 @@ public class ClientController {
     @Value("${greeting}")
     String greeting;
 
+    @Value("${prop1}")
+    String prop1;
+
+    @Value("${prop2}")
+    String prop2;
+
     @GetMapping("/client")
     public ResponseEntity seeAnyAnimal() {
-        return ResponseEntity.ok(greeting);
+        return ResponseEntity.ok(greeting + " " + prop1 + " " + prop2);
     }
 }
